@@ -3,66 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCUM RP Whitelist</title>
-<link rel="stylesheet" href="style.css">
+<title>Whitelist | Not Alone RP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{
-min-height:100vh;
-background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
-display:flex;align-items:center;justify-content:center;
-padding:30px;color:#fff
+:root{
+  --bg:#0b0f14; --card:#121821; --text:#e6eef7; --muted:#9fb0c3;
+  --accent:#ff2a2a; --accent2:#ff7a2a; --border:#1e2733; --input:#1a2230;
 }
-.card{
-width:100%;max-width:1000px;
-background:rgba(20,20,20,.95);
-border:1px solid #333;
-border-radius:24px;
-padding:35px;
-box-shadow:0 0 40px rgba(0,0,0,.5)
-}
-h1{text-align:center;font-size:42px;color:#ff7a18}
-.sub{text-align:center;color:#bbb;margin:10px 0 30px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+body{min-height:100vh;background:radial-gradient(1200px 800px at 80% -10%,#1a2330 0%,var(--bg) 50%),var(--bg);color:var(--text)}
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,15,20,.7);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:24px;padding:12px 24px}
+nav img{height:38px}
+nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:.2s}
+nav a:hover,nav a[aria-current]{color:#fff;background:#1a2230}
+.wrap{display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.card{width:100%;max-width:1000px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:24px;padding:36px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+h1{text-align:center;font-size:clamp(32px,5vw,44px);font-weight:800;background:linear-gradient(90deg,#fff,#ffd1d1 50%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.sub{text-align:center;color:var(--muted);margin-bottom:28px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:800px){.grid{grid-template-columns:1fr}}
-label{display:block;margin:12px 0 6px}
-input,textarea{
-width:100%;padding:14px;border-radius:12px;
-border:1px solid #333;background:#222;color:#fff
-}
-textarea{min-height:120px}
-.section{
-margin-top:25px;color:#ff7a18;font-weight:700;
-border-left:4px solid #ff7a18;padding-left:10px
-}
-.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
-.chk{background:#222;padding:12px;border-radius:12px}
-button{
-width:100%;margin-top:25px;padding:16px;border:0;
-border-radius:14px;background:#ff7a18;color:#fff;
-font-size:18px;font-weight:700;cursor:pointer
-}
+label{display:block;margin:14px 0 6px;font-weight:600;color:#d5e2f0}
+input,textarea{width:100%;padding:14px;border-radius:12px;border:1px solid var(--border);background:var(--input);color:#fff;font-size:15px;transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,42,42,.15)}
+textarea{min-height:120px;resize:vertical}
+.section{margin-top:28px;color:#fff;font-weight:700;font-size:18px;border-left:4px solid var(--accent);padding-left:12px;display:flex;align-items:center;gap:8px}
+.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.chk{background:#141c27;padding:12px;border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer;transition:.2s}
+.chk:hover{background:#1a2230;border-color:#2a3545}
+.chk input{width:auto}
+button{width:100%;margin-top:28px;padding:16px;border:0;border-radius:14px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#000;font-size:18px;font-weight:800;cursor:pointer;transition:.2s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}
 #status{margin-top:20px;text-align:center}
-.success{background:#12331a;padding:15px;border-radius:12px}
-.loading{background:#2d2416;padding:15px;border-radius:12px}
+.success{background:#0f2416;border:1px solid #1f4d2e;padding:15px;border-radius:12px;color:#b6f7c8}
+.loading{background:#241f0f;border:1px solid #4d3d1f;padding:15px;border-radius:12px;color:#ffe6b6}
+.badge{display:inline-block;margin:0 auto 12px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);background:rgba(255,42,42,.08)}
 </style>
 </head>
+<body>
 <nav>
+    <img src="logo.png" alt="Not Alone RP">
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="lore.html">Lore</a></li>
         <li><a href="regelwerk.html">Regelwerk</a></li>
-        <li><a href="whitelist.html">Whitelist</a></li>
+        <li><a href="whitelist.html" aria-current="page">Whitelist</a></li>
     </ul>
 </nav>
-<body>
+
+<div class="wrap">
 <div class="card">
-<h1>SCUM RP WHITELIST</h1>
-<p class="sub">Bewirb dich jetzt für den Server</p>
+<div style="text-align:center"><span class="badge">Hardcore Survival RP</span></div>
+<h1>NOT ALONE RP WHITELIST</h1>
+<p class="sub">Bewirb dich jetzt für den Server – du bist nicht allein.</p>
 
 <form id="whitelistForm" onsubmit="sendApplication(event)">
 
-<div class="section">Persönliche Angaben</div>
+<div class="section">👤 Persönliche Angaben</div>
 <div class="grid">
 <div>
 <label>IC Name</label>
@@ -77,7 +75,7 @@ font-size:18px;font-weight:700;cursor:pointer
 <label>Steam ID</label>
 <input id="steamid" required>
 
-<div class="section">RP Erfahrung</div>
+<div class="section">🎭 RP Erfahrung</div>
 
 <label>Wie lange spielst du bereits RP?</label>
 <input id="rptime" placeholder="z.B. 3 Jahre">
@@ -92,7 +90,7 @@ font-size:18px;font-weight:700;cursor:pointer
 <label class="chk"><input type="checkbox" name="rpgames" value="RedM RP"> RedM RP</label>
 </div>
 
-<div class="section">Bewerbung</div>
+<div class="section">📝 Bewerbung</div>
 
 <label>Beitrittsgrund</label>
 <textarea id="reason" required></textarea>
@@ -103,10 +101,10 @@ font-size:18px;font-weight:700;cursor:pointer
 <label>Gewerbe (optional)</label>
 <input id="business">
 
-<div class="section">Regelwerk</div>
+<div class="section">📜 Regelwerk</div>
 
-<label>
-<input id="rules" type="checkbox" required>
+<label style="display:flex;align-items:center;gap:10px;font-weight:500;margin-top:10px">
+<input id="rules" type="checkbox" required style="width:18px;height:18px">
  Ich habe die Serverregeln gelesen und verstanden.
 </label>
 
@@ -114,6 +112,7 @@ font-size:18px;font-weight:700;cursor:pointer
 </form>
 
 <div id="status"></div>
+</div>
 </div>
 
 <script>
@@ -130,8 +129,8 @@ document.querySelectorAll('input[name="rpgames"]:checked').forEach(x=>games.push
 const payload={
 content:"<@&1517303649221480640>",
 embeds:[{
-title:"📋 Neue SCUM RP Bewerbung",
-color:16742912,
+title:"📋 Neue Not Alone RP Bewerbung",
+color:16729344,
 fields:[
 {name:"IC Name",value:document.getElementById("icname").value},
 {name:"Discord",value:document.getElementById("discord").value},
@@ -158,10 +157,10 @@ if(r.ok){
 document.getElementById("whitelistForm").reset();
 document.getElementById("status").innerHTML='<div class="success">✅ Bewerbung erfolgreich eingereicht. Das Team wurde benachrichtigt.</div>';
 }else{
-document.getElementById("status").innerHTML='❌ Fehler beim Senden.';
+document.getElementById("status").innerHTML='<div class="loading">❌ Fehler beim Senden.</div>';
 }
 }catch(err){
-document.getElementById("status").innerHTML='❌ Webhook nicht erreichbar.';
+document.getElementById("status").innerHTML='<div class="loading">❌ Webhook nicht erreichbar.</div>';
 }
 }
 </script>
