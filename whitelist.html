@@ -58,6 +58,17 @@ button:hover{filter:brightness(1.08);transform:translateY(-1px)}
 <h1>NOT ALONE RP WHITELIST</h1>
 <p class="sub">Bewirb dich jetzt für den Server – du bist nicht allein.</p>
 
+
+<div class="card" style="background:linear-gradient(180deg,rgba(255,122,42,.08),rgba(255,42,42,.05));border:1px solid rgba(255,122,42,.3);margin-bottom:24px;padding:18px;border-radius:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><strong style="color:#ffb07a">⚠️ Wichtig: Nach der Bewerbung</strong><a href="https://discord.gg/Z9CkjNsSmG" target="_blank" style="padding:8px 14px;background:#1a2230;border:1px solid var(--border);border-radius:10px;color:#fff;text-decoration:none;font-weight:600;font-size:14px">💬 Discord öffnen</a></div>
+    <ol style="margin:8px 0 0 18px;color:#e6eef7;line-height:1.6">
+        <li>Bewerbung hier absenden</li>
+        <li>Gehe auf unseren Discord</li>
+        <li>Öffne ein Ticket im Channel <strong>#whitelist-ticket</strong></li>
+        <li>Schreibe dort nur deinen <strong>IC-Namen</strong> rein</li>
+    </ol>
+</div>
+
 <form id="whitelistForm" onsubmit="sendApplication(event)">
 
 <div class="section">👤 Persönliche Angaben</div>
@@ -155,7 +166,18 @@ body:JSON.stringify(payload)
 
 if(r.ok){
 document.getElementById("whitelistForm").reset();
-document.getElementById("status").innerHTML='<div class="success">✅ Bewerbung erfolgreich eingereicht. Das Team wurde benachrichtigt.</div>';
+document.getElementById("status").innerHTML = `
+<div class="success" style="text-align:left">
+    <div style="font-size:18px;margin-bottom:10px">✅ Bewerbung gesendet!</div>
+    <p style="margin:0 0 12px;color:#d4f5dd"><strong>Nächster Schritt – ganz wichtig:</strong></p>
+    <ol style="margin:0 0 14px 18px;line-height:1.7">
+        <li>Joine unserem Discord</li>
+        <li>Gehe zu <strong>#whitelist-ticket</strong> und erstelle ein Ticket</li>
+        <li>Schreibe dort <strong>nur deinen IC-Namen</strong>: <span style="background:#0a1f14;padding:2px 6px;border-radius:6px;color:#7CFF9F">${document.getElementById("icname").value}</span></li>
+    </ol>
+    <a href="https://discord.gg/Z9CkjNsSmG" target="_blank" style="display:inline-block;margin-top:8px;padding:10px 16px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#000;font-weight:800;border-radius:10px;text-decoration:none">💬 Zum Discord</a>
+    <p style="margin-top:12px;font-size:13px;color:#9fb0c3">Das Team sieht deine Bewerbung erst, wenn du das Ticket erstellt hast.</p>
+</div>`;
 }else{
 document.getElementById("status").innerHTML='<div class="loading">❌ Fehler beim Senden.</div>';
 }
