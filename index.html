@@ -1,36 +1,233 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Not Alone RP</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Alone RP – Hardcore Survival Roleplay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --card: #121821;
+            --accent: #ff2a2a;
+            --accent-2: #ff7a2a;
+            --text: #e6eef7;
+            --muted: #9fb0c3;
+            --border: #1e2733;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: radial-gradient(1200px 800px at 80% -10%, #1a2330 0%, var(--bg) 50%), var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: rgba(11,15,20,0.7);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+        nav .left { display: flex; align-items: center; gap: 16px; }
+        nav img { height: 40px; }
+        nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+        nav a { color: var(--muted); text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 8px; transition: .2s; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--text); background: #1a2230; }
+
+        .hero {
+            max-width: 1100px;
+            margin: 60px auto 30px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            line-height: 1.05;
+            margin: 0 0 16px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #ffd1d1 40%, var(--accent));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .hero p.lead {
+            font-size: 18px;
+            color: #d5e2f0;
+            margin: 0 0 24px;
+            max-width: 60ch;
+        }
+        .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn {
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+            transition: .2s;
+        }
+        .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: black; }
+        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+        .btn-ghost { background: #141c27; color: var(--text); border-color: var(--border); }
+        .btn-ghost:hover { background: #1a2230; }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+        .hero-card h3 { margin: 0 0 8px; color: #fff; }
+        .hero-card ul { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+        .badge {
+            display: inline-block; padding: 6px 12px; border: 1px solid var(--border);
+            border-radius: 999px; font-size: 12px; color: var(--muted); margin-bottom: 14px;
+            background: rgba(255,42,42,0.08);
+        }
+
+        .section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .card h3 { margin: 0 0 8px; font-size: 18px; }
+        .card p { margin: 0; color: #cbd8e6; font-size: 15px; }
+        .card .icon { font-size: 22px; margin-bottom: 8px; }
+
+        .philosophy {
+            margin-top: 50px;
+            background: radial-gradient(600px 200px at 50% -50px, rgba(255,42,42,0.15), transparent 70%), var(--card);
+            border: 1px solid rgba(255,42,42,0.3);
+            border-radius: 20px;
+            padding: 28px;
+        }
+        .philosophy h2 { margin-top: 0; }
+        .philosophy p { color: #e0eaf5; }
+
+        footer {
+            margin: 60px 0 40px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
 <nav>
-<img src="logo.png">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="lore.html">Lore</a></li>
-<li><a href="regelwerk.html">Regelwerk</a></li>
-<li><a href="whitelist.html">Whitelist</a></li>
-</ul>
+    <div class="left">
+        <img src="logo.png" alt="Not Alone RP Logo">
+        <strong>NOT ALONE RP</strong>
+    </div>
+    <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="regelwerk.html">Regelwerk</a></li>
+        <li><a href="whitelist.html">Whitelist</a></li>
+    </ul>
 </nav>
 
 <section class="hero">
-<img src="logo.png">
-<h1>NOT ALONE RP</h1>
-<p>
-Willkommen auf Not Alone RP – dem ultimativen SCUM Midcore Roleplay Erlebnis.
-Tauche ein in eine brutale postapokalyptische Welt voller Gefahren, Fraktionen,
-Überlebenskämpfe, Handel, Konflikte und einzigartiger Geschichten.
-Unser Midcore-Konzept verbindet anspruchsvolles Survival mit hochwertigem Roleplay.
-Baue deine eigene Story auf, gründe Gruppen, kontrolliere Gebiete, handle mit anderen
-Überlebenden oder werde zur Legende der Insel.
-</p>
-
-<a class="discord-btn" href="https://discord.gg/XP85SazXAx">DISCORD BEITRETEN</a>
+    <div>
+        <span class="badge">Hardcore Survival • Midcore RP • DayZ</span>
+        <h1>Du bist nicht allein.</h1>
+        <p class="lead">
+            NOT ALONE RP ist ein Hardcore-Survival-RP-Server, auf dem Entscheidungen Gewicht haben und Konsequenzen real sind. 
+            Kein Solo-Grind – hier überlebst du durch Interaktion, Handel und echte Geschichten.
+        </p>
+        <div class="cta">
+            <a class="btn btn-primary" href="whitelist.html">🚀 Jetzt whitelisten</a>
+            <a class="btn btn-ghost" href="regelwerk.html">📜 Regelwerk lesen</a>
+            <a class="btn btn-ghost" href="https://discord.gg/notalonerp" target="_blank">💬 Discord beitreten</a>
+        </div>
+    </div>
+    <div class="hero-card">
+        <h3>Was dich erwartet</h3>
+        <ul>
+            <li>Permadeath-System ab -10.000$</li>
+            <li>Zentrale Handelszone & Player Outposts</li>
+            <li>Flaggen- & Bauordnung für faire Basen</li>
+            <li>Medics, Gewerbe, Fraktionen mit RP-Tiefe</li>
+            <li>Klare Regeln gegen Metagaming & Powergaming</li>
+        </ul>
+    </div>
 </section>
+
+<section class="section">
+    <div class="grid-3">
+        <div class="card">
+            <div class="icon">⚔️</div>
+            <h3>Konsequentes RP</h3>
+            <p>Schuss-Call, New-Life, Powergaming-Verbot – jede Aktion braucht einen nachvollziehbaren Grund.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🏪</div>
+            <h3>Lebendige Wirtschaft</h3>
+            <p>Offizielle Händler, Spieler-Gewerbe und eine Blaue Zone, die als Treffpunkt dient – kein isoliertes Looten.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🏕️</div>
+            <h3>Camps & Outposts</h3>
+            <p>Max. 20 Spieler pro Camp, genehmigte Flaggen, Orange Zone für selbst gebaute Außenposten.</p>
+        </div>
+    </div>
+
+    <div class="philosophy">
+        <h2>Hardcore Survival & Serverphilosophie</h2>
+        <p>
+            NOT ALONE RP unterstreicht den kompromisslosen Hardcore-Charakter mit Permadeath und einem zentralen Handelsort. 
+            Dieser Ort schafft Struktur, Orientierung und glaubwürdiges Rollenspiel – Spieler treffen aufeinander, handeln, tragen Konflikte aus und bauen Beziehungen auf, statt isoliert zu existieren.
+        </p>
+        <p>
+            Das Serverteam behält sich faire Entscheidungen vor. Gesunder Menschenverstand, Fairness und die Förderung von gutem Roleplay haben immer Vorrang.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="grid-3">
+        <div class="card">
+            <div class="icon">🚗</div>
+            <h3>Fahrzeuge mit Sinn</h3>
+            <p>Realistische Nutzung, klare Limits pro Spieler/Camp, max. 2 Kisten pro Fahrzeug.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🩺</div>
+            <h3>Medizinisches RP</h3>
+            <p>Keine Wunderheilung. Ressourcen, Zeitfaktor und Konsequenzen entscheiden über Leben und Tod.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🎥</div>
+            <h3>Streamer-freundlich</h3>
+            <p>Streaming erlaubt, optionale Lizenz mit Assets – Metagaming bleibt strikt verboten.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Not Alone RP – Mit Betreten des Servers akzeptierst du das Regelwerk. <br>
+    Design passend zum Regelwerk • Made for Survivors
+</footer>
 </body>
 </html>
