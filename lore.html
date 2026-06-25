@@ -36,13 +36,18 @@
         .quote{position:relative;margin:28px 0;padding:22px 26px;background:#0c121a;border-left:3px solid var(--accent);
                border-radius:12px;font-family:"Crimson Pro",serif;font-style:italic;font-size:20px;color:#ffe9e9}
         .quote::before{content:"“";position:absolute;top:-18px;left:12px;font-size:64px;color:rgba(255,42,42,.25);font-family:serif}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-        @media(max-width:720px){.grid{grid-template-columns:1fr}}
         .badge{display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:14px}
         .final{background:radial-gradient(500px 180px at 50% -20%,rgba(255,42,42,.18),transparent 70%),var(--card);
                border-color:rgba(255,42,42,.35);text-align:center}
         .final p{font-size:18px}
-    </style>
+    
+        .hero-video{position:relative;height:56vh;min-height:380px;overflow:hidden;border-bottom:1px solid var(--border)}
+        .hero-video video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;filter:brightness(.65) contrast(1.1) saturate(.9)}
+        .hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,16,.1) 0%,rgba(7,11,16,.7) 70%,var(--bg) 100%)}
+        .hero-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:40px;z-index:2}
+        .hero-overlay h1{margin:0;text-align:center}
+
+</style>
 </head>
 <body>
 <nav>
@@ -51,86 +56,96 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="lore.html" aria-current="page">Lore</a></li>
         <li><a href="regelwerk.html">Regelwerk</a></li>
+        <li><a href="gewerbe.html">Gewerbe</a></li>
+        <li><a href="fraktionen.html">Fraktionen</a></li>
         <li><a href="whitelist.html">Whitelist</a></li>
     </ul>
 </nav>
 
+<div class="hero-video">
+    <video autoplay muted loop playsinline>
+        <source src="lore_intro_d7c43b57.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+        <div style="text-align:center">
+            <span class="badge">📜 LORE – NOT ALONE RP</span>
+        </div>
+    </div>
+</div>
+
 <div class="wrap">
-    <span class="badge">📜 LORE – NOT ALONE RP</span>
-    <h1>Wenn die Welt untergeht, zeigt sich, wer wir wirklich sind.</h1>
-    <p class="subtitle">Chernarus nach dem Fall – eine Geschichte von Verlust, Hoffnung und Entscheidungen.</p>
+    <h1>Wenn die Kameras ausgehen, beginnt das echte Spiel.</h1>
+    <p class="subtitle">SCUM – Die Insel nach dem Blackout. Kein Drehbuch. Keine Rettung.</p>
 
     <div class="quote">„Wenn die Welt untergeht, zeigt sich, wer wir wirklich sind.“</div>
 
     <div class="card">
-        <h2>🌍 Die Welt nach dem Fall</h2>
-        <p>Vor mehreren Jahren begann alles mit einem Vorfall, den bis heute niemand vollständig erklären kann. In der Region <strong>Chernarus</strong> wurde eine unbekannte Krankheit entdeckt. Erst hielt man es für eine gewöhnliche Epidemie – doch der Erreger machte Menschen aggressiv, unkontrollierbar… und schließlich zu etwas völlig anderem.</p>
-        <p>Das Militär reagierte sofort. Städte wurden abgeriegelt, Quarantänezonen errichtet, Straßen blockiert. Funkkanäle verstummten einer nach dem anderen. Konvois, die Hilfe bringen sollten, kamen nie an.</p>
-        <p><strong>Dann kam der Moment, an dem alles zusammenbrach.</strong></p>
-        <p>Die Regierung verlor die Kontrolle. Evakuierungen wurden gestoppt. Die Welt außerhalb erklärte Chernarus zur verlorenen Zone.</p>
-        <p style="color:var(--accent);font-weight:700;margin-top:14px">Niemand kam mehr hinein.<br>Und niemand kam mehr heraus.</p>
+        <h2>🎥 Der Anfang</h2>
+        <p>Früher war diese Insel kein Gefängnis – sie war eine Bühne. Ein privater Konzern sperrte Verurteilte ein, bewaffnete sie und übertrug alles live. Die Welt schaute zu, wie Menschen um Nahrung, Waffen und Sekunden Ruhm kämpften.</p>
+        <p>Es war kontrolliertes Chaos. Drohnen am Himmel, Wachen in Türmen, Nachschub per Airdrop. Solange die Kameras liefen, gab es Regeln.</p>
     </div>
 
     <div class="quote">„Manche Kriege enden nie – sie verändern nur ihr Schlachtfeld.“</div>
 
     <div class="card">
-        <h2>☣️ Jahre später</h2>
-        <p>Viele Jahre sind vergangen. Die Infizierten streifen noch immer durch Städte, Dörfer und dichte Wälder. Gebäude sind verfallen, Straßen von Natur überwuchert, Autos rosten am Straßenrand.</p>
-        <p>Doch die Menschheit ist nicht verschwunden.</p>
-        <div class="grid">
-            <p>Manche kämpfen jeden Tag ums Überleben.</p>
-            <p>Andere nutzen das Chaos, um Macht aufzubauen.</p>
-        </div>
+        <h2>📡 Der Blackout</h2>
+        <p>Dann kam der Tag, an dem das Signal abriss. Nicht nur hier – überall. Satelliten verstummten, Stromnetze kollabierten, Regierungen brachen weg. Niemand weiß, ob es ein Krieg war, ein Virus in den Systemen oder einfach der letzte Fehler einer überlasteten Welt.</p>
+        <p>Die Versorgungsschiffe kamen nicht mehr. Die Funkkanäle der Konzern-Security wurden still. Die letzten Militärtransporter hoben ab – und kamen nie zurück.</p>
+        <p style="color:var(--accent);font-weight:700;margin-top:14px">Die Kameras gingen aus.<br>Die Insel blieb an.</p>
     </div>
 
     <div class="quote">„Überleben ist keine Frage von Stärke – sondern von Entscheidungen.“</div>
 
     <div class="card">
-        <h2>🏙️ Die letzte sichere Stadt – Zelenogorsk</h2>
-        <p>Inmitten des Zerfalls hat sich in <strong>Zelenogorsk</strong> eine der größten Gemeinschaften gebildet. Händler, Handwerker, Ärzte und Reisende suchen hier Schutz hinter bewaffneten Mauern.</p>
-        <ul>
-            <li>Geschäfte und Schwarzmarkt-Händler</li>
-            <li>Werkstätten für Waffen und Fahrzeuge</li>
-            <li>Medizinische Versorgung – wenn du zahlen kannst</li>
-            <li>Unterkünfte für Reisende</li>
-            <li>Eine Stadtverwaltung, die versucht, Ordnung zu halten</li>
-        </ul>
-        <p style="margin-top:12px">Doch Sicherheit hat ihren Preis. Wer die Regeln bricht, fliegt raus – oder schlimmer.</p>
+        <h2>☣️ Jahre danach</h2>
+        <p>Jahre sind vergangen. Bunker sind geplündert, Fabriken verrostet, Wälder haben Straßen geschluckt. Generatoren stottern in Kellern, Funkgeräte rauschen nur noch.</p>
+        <p>Doch Menschen sind geblieben. Aus Gefangenen wurden Überlebende. Aus Zuschauern wurden Jäger. Niemand filmt mehr – jetzt zählt nur, was du tust, wenn dich niemand sieht.</p>
     </div>
 
-    <div class="quote">„Eine Stadt ist nur so sicher wie die Menschen, die sie verteidigen.“</div>
+    <div class="quote">„Eine Festung ist nur so sicher wie die Menschen, die sie verteidigen.“</div>
 
     <div class="card">
         <h2>🪖 Das Militär</h2>
-        <p>Einige Einheiten existieren noch. Ihr Auftrag ist geblieben: <em>Beobachtung der Zone. Eindämmung der Infektion.</em> Doch ihre Ressourcen sind knapp, die Ausrüstung alt, und der Glaube an Rettung von außen ist längst erloschen.</p>
-        <p>Trotzdem patrouillieren sie. Nicht für Ruhm – sondern aus Pflichtgefühl.</p>
+        <p>Nicht alle sind gegangen. Reste der alten Sicherheitskräfte und desertierte Soldaten haben Außenposten errichtet. Sie halten Funkfeuer am Leben, sichern Handelsrouten und setzen dort, wo sie können, noch immer altes Recht durch.</p>
+        <p>Ihre Ausrüstung ist alt, ihre Munition knapp. Sie kämpfen nicht mehr für einen Konzern – sie kämpfen dafür, dass nicht alles verfällt.</p>
     </div>
 
     <div class="quote">„Disziplin ist das Letzte, was in einer gefallenen Welt übrig bleibt.“</div>
 
     <div class="card">
         <h2>⚔️ Die Menschen</h2>
-        <p>Nicht jeder folgt Regeln. Über die Jahre haben sich Fraktionen gebildet:</p>
+        <p>Ohne Kameras gibt es keine Rollen mehr – nur Entscheidungen.</p>
         <ul>
-            <li>Überlebende, die ein neues Leben aufbauen wollen</li>
-            <li>Händler, die zwischen Siedlungen reisen</li>
-            <li>Söldner und Sicherheitsgruppen</li>
-            <li>Banditen, die rauben und jagen</li>
-            <li>Einzelgänger, die niemandem vertrauen</li>
+            <li>Überlebende, die Handelsposten aufbauen und Konvois schützen</li>
+            <li>Händler, die zwischen den Sektoren reisen und Preise diktieren</li>
+            <li>Söldner, die für Nahrung kämpfen, nicht für Ruhm</li>
+            <li>Banditen, die Hinterhalte legen, weil es einfacher ist</li>
+            <li>Einzelgänger, die niemandem trauen – und oft als Erste fallen</li>
         </ul>
-        <p style="margin-top:12px;font-weight:600">In dieser Welt entscheidest du selbst:</p>
-        <p><strong>Held oder Bandit. Beschützer oder Jäger.</strong></p>
+        <p style="margin-top:12px;font-weight:600">Hier gibt es keine respawnenden Helden. Nur Konsequenzen.</p>
     </div>
 
     <div class="quote">„In der Dunkelheit erkennt man den wahren Charakter eines Menschen.“</div>
 
+    <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+            <h2>📦 Gewerbe</h2>
+            <p>Alles zu Handelszone, Händlern und Anmeldung.</p>
+            <p><a href="gewerbe.html" style="color:var(--accent);font-weight:700;text-decoration:none">→ Zum Gewerbe-Regelwerk</a></p>
+        </div>
+        <div>
+            <h2>🏴 Fraktionen</h2>
+            <p>Camps, Outposts, Flaggen und Mitgliederlimits.</p>
+            <p><a href="fraktionen.html" style="color:var(--accent);font-weight:700;text-decoration:none">→ Zum Fraktions-Regelwerk</a></p>
+        </div>
+    </div>
+
     <div class="card final">
         <h2>🔥 NOT ALONE RP</h2>
-        <p>Chernarus ist zu einem Ort geworden, den Überlebende nur noch <strong>„Not Alone“</strong> nennen – nicht weil es sicher ist, sondern weil hier niemand lange allein überlebt.</p>
-        <p>Eine Welt ohne Regierung.<br>Ohne Rettung.<br>Ohne Garantie für den nächsten Tag.</p>
-        <p style="margin-top:16px">Doch selbst in der Hölle gibt es Hoffnung.</p>
-        <p>Solange noch Menschen leben, kämpfen und Entscheidungen treffen, ist die Geschichte dieser Welt nicht zu Ende.</p>
-        <p style="color:var(--accent);font-weight:800;font-size:22px;margin-top:20px">Und deine Geschichte beginnt jetzt.</p>
+        <p>Die Insel hat keinen Namen mehr im Netz. Wir nennen sie nur noch <strong>„Not Alone“</strong> – nicht weil es sicher ist, sondern weil du hier allein nicht lange überlebst.</p>
+        <p>Keine Regierung.<br>Keine Airdrops vom Konzern.<br>Keine zweite Chance, wenn du dumm stirbst.</p>
+        <p style="margin-top:16px">Doch solange noch Feuer brennen, Funkgeräte knistern und Menschen handeln, ist die Geschichte nicht vorbei.</p>
+        <p style="color:var(--accent);font-weight:800;font-size:22px;margin-top:20px">Deine Geschichte beginnt, wenn du den ersten Schritt machst.</p>
     </div>
 </div>
 </body>
