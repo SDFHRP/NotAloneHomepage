@@ -3,177 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die Lore | Not Alone RP</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lore | Not Alone RP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Crimson+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#070b10; --card:#10161f; --text:#e8f0f8; --muted:#9fb3c8;
+            --accent:#ff2a2a; --accent2:#ff8a3d; --border:#1d2633;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0; background: #070b10;
+            background-image: radial-gradient(1000px 600px at 20% -10%, #1c2a3a 0%, transparent 60%),
+                              radial-gradient(800px 500px at 90% 0%, #2a1212 0%, transparent 55%);
+            color:var(--text); font-family:Inter,system-ui,sans-serif; line-height:1.75;
+        }
+        nav{position:sticky;top:0;z-index:10;background:rgba(7,11,16,.75);backdrop-filter:blur(8px);
+            border-bottom:1px solid var(--border);display:flex;align-items:center;gap:24px;padding:12px 24px}
+        nav img{height:38px} nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+        nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+        nav a[aria-current]{color:#fff;background:#182230}
+        .wrap{max-width:920px;margin:48px auto;padding:0 20px 100px}
+        h1{font-size:clamp(32px,5vw,52px);margin:0 0 10px;font-weight:800;
+            background:linear-gradient(90deg,#fff,#ffd4d4 40%,var(--accent));-webkit-background-clip:text;color:transparent}
+        .subtitle{color:var(--muted);margin-bottom:32px}
+        .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+              border:1px solid var(--border);border-radius:18px;padding:26px;margin:22px 0;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+        h2{margin:0 0 12px;font-size:24px;display:flex;align-items:center;gap:10px}
+        h2::before{content:"";width:5px;height:22px;background:linear-gradient(var(--accent),var(--accent2));border-radius:3px;display:inline-block}
+        p{margin:0 0 12px;color:#d6e4f3}
+        ul{margin:8px 0 0 18px;color:#cfe0f2}
+        .quote{position:relative;margin:28px 0;padding:22px 26px;background:#0c121a;border-left:3px solid var(--accent);
+               border-radius:12px;font-family:"Crimson Pro",serif;font-style:italic;font-size:20px;color:#ffe9e9}
+        .quote::before{content:"“";position:absolute;top:-18px;left:12px;font-size:64px;color:rgba(255,42,42,.25);font-family:serif}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        @media(max-width:720px){.grid{grid-template-columns:1fr}}
+        .badge{display:inline-block;padding:5px 12px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:14px}
+        .final{background:radial-gradient(500px 180px at 50% -20%,rgba(255,42,42,.18),transparent 70%),var(--card);
+               border-color:rgba(255,42,42,.35);text-align:center}
+        .final p{font-size:18px}
+    </style>
 </head>
-
 <body>
-
 <nav>
-    <img src="logo.png" alt="Not Alone RP Logo">
+    <img src="logo.png" alt="Not Alone RP">
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="lore.html">Lore</a></li>
+        <li><a href="lore.html" aria-current="page">Lore</a></li>
         <li><a href="regelwerk.html">Regelwerk</a></li>
         <li><a href="whitelist.html">Whitelist</a></li>
     </ul>
 </nav>
 
-<div class="content">
+<div class="wrap">
+    <span class="badge">📜 LORE – NOT ALONE RP</span>
+    <h1>Wenn die Welt untergeht, zeigt sich, wer wir wirklich sind.</h1>
+    <p class="subtitle">Chernarus nach dem Fall – eine Geschichte von Verlust, Hoffnung und Entscheidungen.</p>
 
-    <h1>☣️ Die Geschichte von Not Alone RP</h1>
-
-    <div class="card">
-        <h2>Willkommen in einer verlorenen Welt</h2>
-
-        <p>
-            Was einst eine moderne Gesellschaft war, existiert nur noch in den
-            Erinnerungen der wenigen Überlebenden. Städte liegen in Trümmern,
-            Straßen sind verlassen und die Natur beginnt langsam, sich das
-            zurückzuholen, was die Menschheit einst beherrschte.
-        </p>
-
-        <br>
-
-        <p>
-            Die Welt, wie wir sie kannten, ging nicht durch einen einzigen Krieg
-            oder eine einzelne Katastrophe unter. Sie zerbrach Stück für Stück.
-            Regierungen kollabierten, Versorgungsketten brachen zusammen und
-            schließlich kämpfte jeder nur noch für sein eigenes Überleben.
-        </p>
-    </div>
+    <div class="quote">„Wenn die Welt untergeht, zeigt sich, wer wir wirklich sind.“</div>
 
     <div class="card">
-        <h2>Der Ausbruch</h2>
-
-        <p>
-            Vor vielen Jahren begann alles mit einem geheimen Forschungsprojekt.
-            Offiziell sollte eine neue Technologie entwickelt werden, die die
-            menschliche Leistungsfähigkeit steigern sollte.
-        </p>
-
-        <br>
-
-        <p>
-            Doch etwas ging schief.
-            Die Experimente gerieten außer Kontrolle und führten zu Ereignissen,
-            die bis heute nicht vollständig verstanden werden.
-        </p>
-
-        <br>
-
-        <p>
-            Innerhalb weniger Monate brach die Ordnung zusammen.
-            Militärische Sperrzonen wurden errichtet, Kommunikationsnetze fielen
-            aus und Millionen Menschen verschwanden spurlos.
-        </p>
+        <h2>🌍 Die Welt nach dem Fall</h2>
+        <p>Vor mehreren Jahren begann alles mit einem Vorfall, den bis heute niemand vollständig erklären kann. In der Region <strong>Chernarus</strong> wurde eine unbekannte Krankheit entdeckt. Erst hielt man es für eine gewöhnliche Epidemie – doch der Erreger machte Menschen aggressiv, unkontrollierbar… und schließlich zu etwas völlig anderem.</p>
+        <p>Das Militär reagierte sofort. Städte wurden abgeriegelt, Quarantänezonen errichtet, Straßen blockiert. Funkkanäle verstummten einer nach dem anderen. Konvois, die Hilfe bringen sollten, kamen nie an.</p>
+        <p><strong>Dann kam der Moment, an dem alles zusammenbrach.</strong></p>
+        <p>Die Regierung verlor die Kontrolle. Evakuierungen wurden gestoppt. Die Welt außerhalb erklärte Chernarus zur verlorenen Zone.</p>
+        <p style="color:var(--accent);font-weight:700;margin-top:14px">Niemand kam mehr hinein.<br>Und niemand kam mehr heraus.</p>
     </div>
+
+    <div class="quote">„Manche Kriege enden nie – sie verändern nur ihr Schlachtfeld.“</div>
 
     <div class="card">
-        <h2>Die Insel</h2>
-
-        <p>
-            Mitten im Chaos entstand ein Ort, der später als die Insel bekannt
-            wurde. Umgeben von gefährlichen Gewässern und abgeschottet von der
-            Außenwelt entwickelte sie sich zu einem Zufluchtsort für Überlebende.
-        </p>
-
-        <br>
-
-        <p>
-            Doch Sicherheit existiert hier nicht.
-            Ressourcen sind knapp, Konflikte entstehen täglich und jede Gruppe
-            verfolgt ihre eigenen Ziele.
-        </p>
-
-        <br>
-
-        <p>
-            Manche suchen Frieden und Gemeinschaft.
-            Andere streben nach Macht, Reichtum oder Kontrolle.
-        </p>
+        <h2>☣️ Jahre später</h2>
+        <p>Viele Jahre sind vergangen. Die Infizierten streifen noch immer durch Städte, Dörfer und dichte Wälder. Gebäude sind verfallen, Straßen von Natur überwuchert, Autos rosten am Straßenrand.</p>
+        <p>Doch die Menschheit ist nicht verschwunden.</p>
+        <div class="grid">
+            <p>Manche kämpfen jeden Tag ums Überleben.</p>
+            <p>Andere nutzen das Chaos, um Macht aufzubauen.</p>
+        </div>
     </div>
+
+    <div class="quote">„Überleben ist keine Frage von Stärke – sondern von Entscheidungen.“</div>
 
     <div class="card">
-        <h2>Die heutigen Überlebenden</h2>
-
-        <p>
-            Jahre nach dem Zusammenbruch der alten Welt kämpfen die Menschen
-            noch immer ums Überleben.
-        </p>
-
-        <br>
-
-        <p>
-            Händler ziehen zwischen den Siedlungen umher.
-            Fraktionen sichern Gebiete und verteidigen ihre Interessen.
-            Einzelgänger durchstreifen die Wildnis auf der Suche nach Vorräten,
-            Informationen oder einem neuen Anfang.
-        </p>
-
-        <br>
-
-        <p>
-            Niemand weiß, ob außerhalb der Insel noch eine funktionierende
-            Gesellschaft existiert.
-            Die Gerüchte sind zahlreich, doch Beweise gibt es keine.
-        </p>
+        <h2>🏙️ Die letzte sichere Stadt – Zelenogorsk</h2>
+        <p>Inmitten des Zerfalls hat sich in <strong>Zelenogorsk</strong> eine der größten Gemeinschaften gebildet. Händler, Handwerker, Ärzte und Reisende suchen hier Schutz hinter bewaffneten Mauern.</p>
+        <ul>
+            <li>Geschäfte und Schwarzmarkt-Händler</li>
+            <li>Werkstätten für Waffen und Fahrzeuge</li>
+            <li>Medizinische Versorgung – wenn du zahlen kannst</li>
+            <li>Unterkünfte für Reisende</li>
+            <li>Eine Stadtverwaltung, die versucht, Ordnung zu halten</li>
+        </ul>
+        <p style="margin-top:12px">Doch Sicherheit hat ihren Preis. Wer die Regeln bricht, fliegt raus – oder schlimmer.</p>
     </div>
+
+    <div class="quote">„Eine Stadt ist nur so sicher wie die Menschen, die sie verteidigen.“</div>
 
     <div class="card">
-        <h2>Deine Geschichte beginnt jetzt</h2>
-
-        <p>
-            Jeder Charakter auf Not Alone RP betritt die Insel mit seiner
-            eigenen Vergangenheit, seinen eigenen Zielen und seinen eigenen
-            Geheimnissen.
-        </p>
-
-        <br>
-
-        <p>
-            Vielleicht wirst du ein erfolgreicher Händler.
-            Vielleicht gründest du eine mächtige Fraktion.
-            Vielleicht wirst du zum gefürchtetsten Banditen der Insel.
-        </p>
-
-        <br>
-
-        <p>
-            Oder du versuchst einfach nur, den nächsten Tag zu erleben.
-        </p>
+        <h2>🪖 Das Militär</h2>
+        <p>Einige Einheiten existieren noch. Ihr Auftrag ist geblieben: <em>Beobachtung der Zone. Eindämmung der Infektion.</em> Doch ihre Ressourcen sind knapp, die Ausrüstung alt, und der Glaube an Rettung von außen ist längst erloschen.</p>
+        <p>Trotzdem patrouillieren sie. Nicht für Ruhm – sondern aus Pflichtgefühl.</p>
     </div>
+
+    <div class="quote">„Disziplin ist das Letzte, was in einer gefallenen Welt übrig bleibt.“</div>
 
     <div class="card">
-        <h2>🔥 Schlusswort</h2>
-
-        <p>
-            Die Insel vergisst niemanden.
-            Jede Entscheidung hinterlässt Spuren.
-            Jeder Verbündete kann zum Feind werden.
-            Jeder Feind kann eines Tages dein Leben retten.
-        </p>
-
-        <br>
-
-        <p>
-            Die Zukunft dieser Welt ist nicht geschrieben.
-            Sie wird von den Menschen bestimmt, die den Mut haben,
-            in ihr zu überleben.
-        </p>
-
-        <br>
-
-        <p style="text-align:center; font-size:22px; color:#ff2a2a; font-weight:bold;">
-            Deine Geschichte beginnt heute.
-            <br>
-            <span style="font-size:16px; color:white;">
-                Willkommen auf Not Alone RP.
-            </span>
-        </p>
+        <h2>⚔️ Die Menschen</h2>
+        <p>Nicht jeder folgt Regeln. Über die Jahre haben sich Fraktionen gebildet:</p>
+        <ul>
+            <li>Überlebende, die ein neues Leben aufbauen wollen</li>
+            <li>Händler, die zwischen Siedlungen reisen</li>
+            <li>Söldner und Sicherheitsgruppen</li>
+            <li>Banditen, die rauben und jagen</li>
+            <li>Einzelgänger, die niemandem vertrauen</li>
+        </ul>
+        <p style="margin-top:12px;font-weight:600">In dieser Welt entscheidest du selbst:</p>
+        <p><strong>Held oder Bandit. Beschützer oder Jäger.</strong></p>
     </div>
 
+    <div class="quote">„In der Dunkelheit erkennt man den wahren Charakter eines Menschen.“</div>
+
+    <div class="card final">
+        <h2>🔥 NOT ALONE RP</h2>
+        <p>Chernarus ist zu einem Ort geworden, den Überlebende nur noch <strong>„Not Alone“</strong> nennen – nicht weil es sicher ist, sondern weil hier niemand lange allein überlebt.</p>
+        <p>Eine Welt ohne Regierung.<br>Ohne Rettung.<br>Ohne Garantie für den nächsten Tag.</p>
+        <p style="margin-top:16px">Doch selbst in der Hölle gibt es Hoffnung.</p>
+        <p>Solange noch Menschen leben, kämpfen und Entscheidungen treffen, ist die Geschichte dieser Welt nicht zu Ende.</p>
+        <p style="color:var(--accent);font-weight:800;font-size:22px;margin-top:20px">Und deine Geschichte beginnt jetzt.</p>
+    </div>
 </div>
-
 </body>
 </html>
