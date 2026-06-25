@@ -34,9 +34,41 @@ h1{font-size:clamp(32px,5vw,46px);margin:0 0 10px;background:linear-gradient(90d
 </ul>
 </nav>
 <div class="wrap">
-<span class="badge">🚀 SERVER SUPPORT</span>
+<span class="badge">🚀 SERVER SUPPORT</span> <span class="badge">📅 Monatlicher Reset am 1.</span>
 <h1>Vote für Not Alone RP</h1>
 <p class="sub">Jeder Vote bringt uns weiter nach oben – mehr Spieler, mehr Action. Danke für deinen Support!</p>
+
+<div class="card" id="reset-card" style="text-align:center;border-color:rgba(255,122,42,.4)">
+<h2 style="margin:0 0 8px">Monatlicher Vote-Reset</h2>
+<p style="margin:0;color:var(--muted)">Alle Votes werden am <strong>1. jeden Monats um 00:00 Uhr</strong> automatisch zurückgesetzt – egal ob der Monat 28, 30 oder 31 Tage hat. Danach startest du wieder bei 0 und kannst erneut auf 100 Votes für das erste Geschenk hinarbeiten.</p>
+<div id="countdown" style="font-size:28px;font-weight:800;margin:16px 0;color:#ff7a2a">Lädt...</div>
+<p style="margin:0;font-size:13px;color:var(--muted)">Nächster Reset: <span id="next-date"></span></p>
+</div>
+<script>
+function updateCountdown(){
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  // next month 1st at 00:00
+  const next = new Date(year, month + 1, 1, 0, 0, 0);
+  const diff = next - now;
+  
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const secs = Math.floor((diff % (1000*60)) / 1000);
+  
+  document.getElementById('countdown').textContent = 
+    days + ' Tage ' + hours.toString().padStart(2,'0') + ':' + 
+    mins.toString().padStart(2,'0') + ':' + secs.toString().padStart(2,'0');
+  
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  document.getElementById('next-date').textContent = next.toLocaleDateString('de-DE', options) + ' um 00:00 Uhr';
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
 
 <div class="card">
 <h2 style="margin-top:0">So votest du – nur 2 Schritte</h2>
@@ -62,9 +94,10 @@ h1{font-size:clamp(32px,5vw,46px);margin:0 0 10px;background:linear-gradient(90d
 <div class="card">
 <h2 style="margin-top:0">🎁 Vote-Belohnungen</h2>
 <div class="grid" style="margin-top:12px">
-<div class="reward"><strong>1 Vote</strong><br><span style="color:var(--muted)">500$ Ingame + 1x Verband</span></div>
-<div class="reward"><strong>5 Votes</strong><br><span style="color:var(--muted)">Wahl-Waffe (Basic)</span></div>
-<div class="reward"><strong>10 Votes</strong><br><span style="color:var(--muted)">VIP-Rolle im Discord</span></div>
+<div class="reward"><strong>10 Votes</strong><br><span style="color:var(--muted)">Vote-Starter: 2x Verband + 1x Wasserflasche + 1x Konserve</span></div>
+<div class="reward"><strong>25 Votes</strong><br><span style="color:var(--muted)">Survival-Kit: Kleiner Rucksack + Taschenlampe</span></div>
+<div class="reward"><strong>50 Votes</strong><br><span style="color:var(--muted)">Werkzeug-Kit: 1x Axt + 1x Messer + 5x Nägel</span></div>
+<div class="reward"><strong>100 Votes</strong><br><span style="color:var(--muted)">DEIN 1. Geschenk – wählbar: 1 Jagdgewehr (Kar98) mit 10 Schuss oder 1x Medizin-Kiste</span></div>
 </div>
 
 <div class="card" style="text-align:center;background:linear-gradient(180deg,rgba(255,42,42,.08),rgba(255,122,42,.05));border-color:rgba(255,42,42,.3)">
