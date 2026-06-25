@@ -1,187 +1,353 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Regelwerk | Not Alone RP</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regelwerk | Not Alone RP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --card: #121821;
+            --accent: #ff2a2a;
+            --accent-2: #ff7a2a;
+            --text: #e6eef7;
+            --muted: #9fb0c3;
+            --border: #1e2733;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: radial-gradient(1200px 800px at 80% -10%, #1a2330 0%, var(--bg) 50%), var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            line-height: 1.65;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background: rgba(11,15,20,0.7);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 12px 24px;
+        }
+        nav img {
+            height: 40px;
+            width: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: .2s;
+        }
+        nav a:hover, nav a[aria-current="page"] {
+            color: var(--text);
+            background: #1a2230;
+        }
+        .content {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 0 20px 80px;
+        }
+        h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 0 0 24px;
+            letter-spacing: .3px;
+            background: linear-gradient(90deg, var(--text), #ffd1d1 60%, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        h2 {
+            font-size: 22px;
+            margin: 0 0 12px;
+            color: #fff;
+        }
+        h3 {
+            font-size: 17px;
+            margin: 18px 0 8px;
+            color: var(--accent-2);
+            font-weight: 700;
+        }
+        p { margin: 0 0 12px; color: #d5e2f0; }
+        .card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 22px;
+            margin: 18px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+        .card.highlight {
+            border-color: rgba(255,42,42,0.4);
+            background: radial-gradient(600px 200px at 50% -50px, rgba(255,42,42,0.15), transparent 70%), var(--card);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-family: "JetBrains Mono", monospace;
+        }
+        th, td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+        th { color: var(--muted); font-weight: 600; }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+        .intro {
+            display: grid;
+            gap: 12px;
+        }
+        footer {
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+        /* subtle red accent bar */
+        .card h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background: linear-gradient(var(--accent), var(--accent-2));
+            margin-right: 10px;
+            border-radius: 3px;
+            transform: translateY(2px);
+        }
+    </style>
 </head>
 <body>
-
 <nav>
     <img src="logo.png" alt="Not Alone RP Logo">
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="lore.html">Lore</a></li>
-        <li><a href="regelwerk.html">Regelwerk</a></li>
+        <li><a href="regelwerk.html" aria-current="page">Regelwerk</a></li>
         <li><a href="whitelist.html">Whitelist</a></li>
     </ul>
 </nav>
 
 <div class="content">
-<h1>📜 Regelwerk - Not Alone RP</h1>
-
-
-    <div class="card">
-        <h2>Willkommen bei Not Alone RP</h2>
-        <p>Ingame-Regelwerk – Not Alone RP<br>Hardcore Survival & Serverphilosophie<br>Not Alone RP ist ein Hardcore-Survival-RP-Server, auf dem Entscheidungen Gewicht haben und Konsequenzen real sind. Der Fokus liegt nicht auf Solo-Gameplay, sondern auf gemeinschaftlichem Überleben, Interaktion und langfristigem Rollenspiel. Wer sich vollständig absondert, erschwert nicht nur sein eigenes Überleben, sondern schwächt auch das RP-Gefüge der Welt.<br>Das Permadeath-System bleibt ein fester Bestandteil von Not Alone RP und unterstreicht den kompromisslosen Hardcore-Charakter des Servers. Ergänzend basiert das Server Konzept auf einem zentralen Handelsort, der Struktur, Orientierung und glaubwürdiges Rollenspiel ermöglicht. Dieser Ort dient bewusst als Sammelpunkt, an dem Spieler aufeinandertreffen, handeln, Konflikte austragen und Beziehungen aufbauen, statt isoliert zu existieren.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§1 Spawn-Kosten</h2>
-        <p>Perma-Death: Spieler, deren Geldbestand -10.000$ oder mehr erreicht, unterliegen im Todesfall der Perma-Death-Regel.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§2 Flaggen- & Bauordnung</h2>
-        <p></p>
-    </div>
-    
-    <div class="card">
-        <h2>§2.1 Flaggen und Camps</h2>
-        <p>Jeder Spieler darf nur dann eine eigene Flagge besitzen, solange er kein Mitglied eines Camps ist. Sobald ein Spieler einem Camp beitritt, muss seine persönliche Flagge unverzüglich entfernt werden. Camp-Mitglieder dürfen keine eigenen Flaggen unterhalten oder zusätzlich zu Camp-Flaggen nutzen. Camps selbst dürfen Flaggen ausschließlich in dem von der Serverleitung genehmigten Rahmen verwenden. In Ausnahmefällen können nach vorheriger Absprache maximal zwei bis drei Camp-Flaggen genehmigt werden. Ohne ausdrückliche Freigabe ist jede weitere Flagge untersagt.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§2.2 Nutzung bestehender Gebäude</h2>
-        <p>Die Nutzung bestehender Gebäude ist grundsätzlich verboten. Es ist nicht gestattet, Häuser, Garagen, Hallen oder andere Bauwerke zu beziehen, abzuschließen, umzubauen oder als Lager zu verwenden. Dies gilt sowohl dauerhaft als auch temporär. Ebenso ist es verboten, Gebäude oder Bereiche zu blockieren oder für eine spätere Nutzung zu reservieren.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§2.3 Flaggen an Spieler-Händler-Zonen</h2>
-        <p>Darüber hinaus ist das Bauen und Setzen von Flaggen im Player Outpost, in Dörfern, Städten, an Spieler-Händler-Zonen sowie in der Handelszone strikt untersagt. Dieses Verbot gilt ausdrücklich auch für die unmittelbare Umgebung dieser Bereiche. Das absichtliche Bauen neben, außerhalb oder angrenzend an diese Zonen, um die Regeln zu umgehen, ist nicht erlaubt. Gleiches gilt für das Bauen oder Flaggen-Setzen in der Nähe genehmigter Player Outposts.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§3 Player Outpost (Orange Zone)</h2>
-        <p>Im genehmigten Player Outpost dürfen ausschließlich die Camp-Leitung sowie deren offiziell registrierte Mitglieder bauen. Der Bau ist nur innerhalb des festgelegten Outpost-Bereichs erlaubt und muss dem Konzept des Außenpostens dienen. Eigenmächtige Erweiterungen oder private Strukturen sind nicht gestattet. Flaggen innerhalb eines genehmigten Außenpostens dürfen nur in dem Umfang gesetzt werden, wie es notwendig ist, um den Außenposten funktionsfähig zu machen. Übermäßiges Setzen von Flaggen zur Gebietsausweitung oder zur Schaffung inoffizieller Safezones ist untersagt.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§4 Handelszone (Blaue Zone)</h2>
-        <p>In der Handelszone darf jedes offiziell angemeldete Gewerbe genau eine Flagge setzen. Diese Flagge dient ausschließlich der Markierung des eigenen Handelsbereichs. Zusätzliche Flaggen, Gebietserweiterungen oder missbräuchliche Nutzung sind nicht erlaubt. Verstöße gegen diese Regelung werden konsequent von der Serverleitung sanktioniert.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§5 Zonen-Regelung auf der Map</h2>
-        <p>Pro Camp sind maximal 20 Mitglieder erlaubt. Eine Überschreitung der 20 Mitglieder ist nicht gestattet. Bitte haltet euch an diese Vorgabe, um Fairness und Service Balance zu gewährleisten. Zu den Mitgliedern zählen auch Campleiter und bis zu zwei Stellvertreter.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§6 Zonen-Regelung auf der Map</h2>
-        <p></p>
-    </div>
-    
-    <div class="card">
-        <h2>§6.1 Blaue Zone – Händler Zone</h2>
-        <p>In der Blauen Zone dürfen nur offizielle Händler bauen.<br>Spieler dürfen diese Zone zum Einkaufen, Verkaufen und Handeln betreten.<br>Eigene Basen oder Strukturen (z.B. Mauern, Kisten, Fallen, Shelter) von normalen Spielern sind in der Blauen Zone verboten.<br>Griefing, Blockieren von Händlern oder Camper-Verhalten ist in der Blauen Zone streng untersagt.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§6.2 Grüne Zone – Außenposten</h2>
-        <p>Die grünen Zonen entsprechen den Außenposten im Spiel.<br>Hier gelten die gleichen Regeln, wie sie bereits oben im Regelwerk für Außenposten festgelegt sind.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§6.3 Orange Zone – Player Outpost</h2>
-        <p>Die Orange Zone markiert einen Player Outpost, der von Spielern selbst errichtet und betrieben wird. Dieser Außenposten ist kein vorgefertigter Safeplace, sondern ein durch Spieler Arbeit entstandener Ort, der Organisation, Zusammenhalt und aktives Rollenspiel widerspiegelt.<br>Der Player Outpost dient als Treffpunkt, Versorgungs- und Interaktionsort für Überlebende. Schutz entsteht hier nicht durch Mechaniken, sondern durch Präsenz, Absprachen und RP der Spieler, die diesen Ort nutzen und verteidigen.<br>Der Outpost existiert nur so lange, wie er aktiv bespielt, gepflegt und verteidigt wird. Vernachlässigung, fehlende Präsenz oder Konflikte können dazu führen, dass der Ort an Bedeutung verliert oder vollständig zusammenbricht.<br>Der Player Outpost ist ein dynamischer Teil der Welt. Er kann wachsen, sich verändern oder verschwinden – abhängig von den Entscheidungen der Spieler. Es ist kein sicherer Ort per Regel, sondern ein Ergebnis von Zusammenarbeit, Risiko und Konsequenzen.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§7 Schuss-Call & Waffengebrauch</h2>
-        <p>Spieler dürfen andere Spieler beschießen, jedoch nur mit klarem RP-Hintergrund. Es ist verboten, jemanden grundlos oder aus Langeweile anzugreifen. Gewalt muss immer situationsbedingt, nachvollziehbar und RP-logisch sein.<br>Ein Schuss-Call gilt ab dem Moment, in dem eine Waffe sichtbar auf einen Spieler gerichtet wird. Ab diesem Zeitpunkt befindet sich die Situation in einer akuten Bedrohungslage.<br>Das eigene Leben hat im Roleplay höchste Priorität. Befehle der anderen Partei sind zu befolgen, um das eigene Überleben zu sichern. Unnötiger Widerstand, Heladenverhalten oder sinnlose Eskalation sind nicht erlaubt.<br>Betritt eine fremde Person einen Spieler-Außenposten ohne Einladung oder ohne ausdrückliche Erlaubnis eines berechtigten Mitglieds, gilt dies als RP-relevanter Regelverstoß. Eskaliert die Situation im RP, etwa durch Provokation, Bedrohung oder Ignorieren von Aufforderungen, ist der Einsatz von Schusswaffen innerhalb des RP-Rahmens zulässig.<br>Sofortiges Schießen ohne vorherige Eskalation ist ausschließlich bei unmittelbarer Lebensgefahr erlaubt. Jeder Verstoß gegen diese Regeln gilt als Fail-RP und wird entsprechend geahndet.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§8 Medics und medizinisches RP</h2>
-        <p>Medics sind keine „Wiederbelebungsmaschinen“, sondern ein integraler Bestandteil des Hardcore-RPs. Spieler sollen die Dringlichkeit, Verantwortung und Spannung medizinischer Situationen spüren.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§8.1 Allgemeines</h2>
-        <p>Medics handeln ausschließlich RP-basiert. Jede medizinische Behandlung muss ausgespielt, logisch begründet und zeitlich nachvollziehbar sein. Verletzungen verlieren nicht durch Rollen, Fähigkeiten oder Menüs ihre Bedeutung – es gibt kein Instant-Healing.<br>Medizinische Hilfe erfordert Planung, Zeit, Ressourcen und gegebenenfalls spezielle Items. Ein Medic kann nicht einfach „alles heilen“, sondern muss die Verletzungen realistisch behandeln, wobei Komplikationen, Blutverlust, Schockzustände oder Infektionen berücksichtigt werden müssen.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§8.2 Richtlinien für Medics</h2>
-        <p>Jede Behandlung muss RP-logisch erklärt werden.<br>Zeitfaktor ist entscheidend: Ein schwer verletzter Spieler kann nicht innerhalb von Sekunden wieder kampfbereit sein.<br>Ressourcenabhängigkeit: Heilmittel, Verbände, Medikamente oder Geräte müssen vorhanden und eingesetzt werden.<br>Konsequenzen bleiben bestehen: Wer zu spät behandelt wird oder falsche Entscheidungen trifft, trägt die Folgen.<br>Koordination unter Medics ist empfohlen, um komplexe Verletzungen realistisch darzustellen.<br>Leichte Verletzungen müssen von den Spielern zunächst selbstständig zu Hause behandelt werden; auch diese heilen nicht automatisch.<br>Phönix-Spritzen dürfen von Medics nicht benutzt werden, auch wenn sie gefunden werden.<br>“Bewusstlose Spieler dürfen nicht mit Phönix-Spritzen wiederbelebt werden.”</p>
-    </div>
-    
-    <div class="card">
-        <h2>§9 Dispatch & Kommunikation</h2>
-        <p>Dispatch dient ausschließlich RP-Notrufen, Koordination und RP-relevanter Kommunikation. OOC-Gespräche, Meta-Informationen oder Anweisungen außerhalb des Rollenspiels sind strikt verboten.<br>Bewusstlose Spieler dürfen den Dispatch nicht benutzen.<br>Dispatch muss genutzt werden, wenn medizinische, logistische oder sicherheitsrelevante RP-Situationen entstehen. Missbrauch, unnötige Notrufe oder Spam werden geahndet.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§10 RP-Konsistenz & Spielverhalten</h2>
-        <p>Alle Handlungen müssen jederzeit RP-logisch und nachvollziehbar sein.<br>Powergaming und Metagaming sind strikt verboten.<br>Jede Entscheidung muss zur Welt, zur Situation und zum Charakter passen.<br>Geschichten entstehen durch Begegnungen, nicht durch Abkapselung.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§11 Fahrzeuge Regelwerk</h2>
-        <p>Fahrzeuge müssen realistisch genutzt werden. Missbrauch, Regelverstöße oder Ausnutzung führen zum Verlust des Fahrzeugs und weiteren Konsequenzen. Spieler sind selbst dafür verantwortlich, relevante Fahrzeugdaten (Fahrzeug-ID) zu dokumentieren.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§11.1 Regeln zur Fahrzeuganzahl und Lagerung</h2>
-        <p>In jedem Fahrzeug sind maximal 2 Kisten erlaubt. Mehr als 2 Kisten führen zu Strafen.<br>Einzelspieler dürfen besitzen:<br>1 fahrzeug aller art (auẞer Traktor)<br>1 Motorrad (RIS zählt zu Motorrad)<br>1 Traktor<br>Teams/Camps dürfen besitzen:<br>Pro Mitglied: 1 Auto und 1 Motorrad (RIS zählt zu Motorrad)<br>Als Team insgesamt: 2 Traktor, 4 Boote, 2 Flugzeuge</p>
-    </div>
-    
-    <div class="card">
-        <h2>§11.2 RP & Verantwortung</h2>
-        <p>Fahrzeuge müssen im RP verwendet werden – das bedeutet, sie sollten realistisch genutzt werden (z.B. Transport von Ressourcen oder Charakteren).<br>Spieler sind dafür verantwortlich, die Fahrzeug-ID eigenständig zu dokumentieren, um im Falle von Rückerstattungen oder Supportanfragen einen Nachweis vorlegen zu können.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§12.1 Händler & Handel</h2>
-        <p>Alle Ingame-Händler auf der Map sind aktiv und verfügbar, damit Spieler jederzeit Waren kaufen oder verkaufen können. Diese Händler dienen als zentrale Anlaufstellen für den Handel im Spiel und stellen sicher, dass wichtige Items jederzeit zugänglich sind.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§12.2 Regeln zur Händler-Aktivierung und -Deaktivierung</h2>
-        <p>Händler bleiben aktiv, solange die Anzahl der aktiven Gewerbe unterhalb des festgelegten Limits liegt.<br>Sobald die maximale Anzahl an Gewerben erreicht wird, werden die Händler automatisch deaktiviert, bis sich die Situation ändert. Dadurch wird sichergestellt, dass das System nicht überlastet wird und das Gameplay ausgewogen bleibt.<br>Die Aktivierung und Deaktivierung der Händler erfolgt dynamisch und passt sich immer der aktuellen Spieler- und Gewerbe Situation an.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§13 Gewerbe-Status im Discord</h2>
-        <p>Regeln zur Händler-Aktivierung und -Deaktivierung:<br>Im Discord wird ein offizieller Gewerbe-Status eingeführt, der für alle Spieler sichtbar macht, wie viele Gewerbe aktiv sind und wann Händler genutzt werden können.<br>Dort wird auch klar ersichtlich, ab wann Händler deaktiviert werden, sodass Spieler ihre Planungen entsprechend anpassen können.<br>Dieses System stellt sicher, dass Ingame-Händler fair, dynamisch und nachvollziehbar verfügbar sind, und dass die Welt kontrolliert auf die Spieleraktivität reagiert, ohne dass Spieler unnötig benachteiligt werden.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§14 Streamer-Regelung</h2>
-        <p>Streaming auf Not Alone RP ist grundsätzlich erlaubt, sowohl mit als auch ohne Streamer-Lizenz. Wer möchte, kann bei uns auf der Homepage eine Streamer-Lizenz beantragen. Link zum Streamer Lizenz Fragebogen.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§14.1 Spieler mit Lizenz erhalten folgende Vorteile</h2>
-        <p>Benachrichtigungen im Discord, wenn sie live gehen<br>Bereitstellung von offiziellen Stream-Bildern, Overlays und Assets<br>Sichtbarkeit für die Community als offizieller Not Alone RP Streamer</p>
-    </div>
-    
-    <div class="card">
-        <h2>§14.2 Wichtige Regeln für alle Streamer</h2>
-        <p>Metagaming durch Streams ist strikt verboten. Informationen aus Chats, Zuschauern oder anderen Streams dürfen unter keinen Umständen ins RP einfließen.<br>Streamer sind selbst verantwortlich für ihren Chat. Hinweise, Warnungen oder Tipps aus dem Chat müssen ignoriert werden. Verstöße werden wie normales Metagaming behandelt.<br>RP-Integrität muss jederzeit gewahrt bleiben. Streamer dürfen das RP anderer Spieler nicht stören oder beeinflussen.<br>Werbung für Streams außerhalb der offiziellen Kanäle ist nur nach Absprache erlaubt.<br>Streamer müssen sich an alle Serverregeln und RP-Regeln halten – die Streamer-Lizenz entbindet nicht von der Verantwortung.<br>Dieses System ermöglicht es Spielern, öffentlich zu streamen und ihre Inhalte zu teilen, ohne das RP zu gefährden, und sorgt gleichzeitig dafür, dass die Community informiert und eingebunden bleibt.</p>
-    </div>
-    
-    <div class="card">
-        <h2>§15 Support-Regelwerk</h2>
-        <p>Support wird ausschließlich über die dafür vorgesehenen Kanäle bearbeitet. Private Nachrichten an Support-Mitglieder oder die Serverleitung sind strikt verboten. Anfragen, die außerhalb der offiziellen Kanäle gestellt werden, können nicht bearbeitet werden.<br>Jede Support-Anfrage muss eindeutige Beweise enthalten, z. B. Screenshots oder Videos. Ohne diese Beweise erfolgt kein Support.<br>Support dient der Klärung von Bugs, Glitches oder technischen Problemen. Er ersetzt keinesfalls RP-Konsequenzen. Die Hardcore-Prinzipien bleiben bestehen, es sei denn, es handelt sich um eindeutig belegte Fehler im Spiel.<br>Entscheidungen des Support-Teams sind endgültig und müssen akzeptiert werden. Spieler sollten klar, respektvoll und sachlich kommunizieren. Missbrauch der Support-Kanäle, Spam oder unhöfliches Verhalten kann zu Strafen führen.<br>Dieses System stellt sicher, dass Support effizient, transparent und fair abläuft, während gleichzeitig die RP-Integrität und Hardcore-Prinzipien gewahrt bleiben.</p>
-    </div>
-    
-    <div class="card">
-        <h2>Schlusswort</h2>
-        <p>Not Alone RP ist eine Welt, in der niemand alleine überlebt. Entscheidungen haben Gewicht, RP hat Konsequenzen und jede Begegnung formt deine Geschichte. Wer diesen Server betritt, akzeptiert Hardcore-Survival, echtes Roleplay und Verantwortung für seinen Charakter.<br>Lies die Regeln, respektiere die Community und gestalte das RP aktiv mit. Willkommen in Not Alone RP – deine Geschichte beginnt jetzt.</p>
-    </div>
-    
+    <div class="card intro">
+        <span class="badge">Version 1.0 • Ingame-Regelwerk</span>
+        <h1>📜 Ingame-Regelwerk – NOT ALONE RP</h1>
+<h2>Hardcore Survival & Serverphilosophie</h2>
+<p>NOT ALONE RP ist ein Hardcore-Survival-RP-Server, auf dem Entscheidungen Gewicht haben und Konsequenzen real sind. Der Fokus liegt nicht auf Solo-Gameplay, sondern auf gemeinschaftlichem Überleben, Interaktion und langfristigem Rollenspiel. Wer sich vollständig absondert, erschwert nicht nur sein eigenes Überleben, sondern schwächt auch das RP-Gefüge der Welt.</p>
+<p>Das Permadeath-System bleibt ein fester Bestandteil von NOT ALONE RP und unterstreicht den kompromisslosen Hardcore-Charakter des Servers. Ergänzend basiert das Server Konzept auf einem zentralen Handelsort, der Struktur, Orientierung und glaubwürdiges Rollenspiel ermöglicht. Dieser Ort dient bewusst als Sammelpunkt, an dem Spieler aufeinandertreffen, handeln, Konflikte austragen und Beziehungen aufbauen, statt isoliert zu existieren.</p>
+</div>
+<div class="card">
+<h2>§1 Spawn-Kosten</h2>
 
 <div class="card">
-<h2>🔥 Schlusswort</h2>
-<p style="text-align:center; font-size:22px; color:#ff2a2a; font-weight:bold;">
-Willkommen bei Not Alone RP
-<br>
-<span style="font-size:16px; color:white;">Du bist nicht allein.</span>
-</p>
+<h2>Spawn-Kosten Übersicht</h2>
+<table>
+<tr><th>Spawn-Art</th><th>Kosten</th></tr>
+<tr><td>Zufälliger Spawn</td><td>1.000$</td></tr>
+<tr><td>Sektor-Spawn</td><td>500$</td></tr>
+<tr><td>Bett-Spawn</td><td>250$</td></tr>
+</table>
 </div>
 
+<p>Perma-Death: Spieler, deren Geldbestand -10.000$ oder mehr erreicht, unterliegen im Todesfall der Perma-Death-Regel.</p>
+</div>
+<div class="card">
+<h2>§2 Flaggen- & Bauordnung</h2>
+</div>
+<div class="card">
+<h2>§2.1 Flaggen und Camps</h2>
+<p>Jeder Spieler darf nur dann eine eigene Flagge besitzen, solange er kein Mitglied eines Camps ist. Sobald ein Spieler einem Camp beitritt, muss seine persönliche Flagge unverzüglich entfernt werden. Camp-Mitglieder dürfen keine eigenen Flaggen unterhalten oder zusätzlich zu Camp-Flaggen nutzen. Camps selbst dürfen Flaggen ausschließlich in dem von der Serverleitung genehmigten Rahmen verwenden. In Ausnahmefällen können nach vorheriger Absprache maximal zwei bis drei Camp-Flaggen genehmigt werden. Ohne ausdrückliche Freigabe ist jede weitere Flagge untersagt.</p>
+</div>
+<div class="card">
+<h2>§2.2 Nutzung bestehender Gebäude</h2>
+<p>Die Nutzung bestehender Gebäude ist grundsätzlich verboten. Es ist nicht gestattet, Häuser, Garagen, Hallen oder andere Bauwerke zu beziehen, abzuschließen, umzubauen oder als Lager zu verwenden. Dies gilt sowohl dauerhaft als auch temporär. Ebenso ist es verboten, Gebäude oder Bereiche zu blockieren oder für eine spätere Nutzung zu reservieren.</p>
+</div>
+<div class="card">
+<h2>§2.3 Flaggen an Spieler-Händler-Zonen</h2>
+<p>Darüber hinaus ist das Bauen und Setzen von Flaggen im Player Outpost, in Dörfern, Städten, an Spieler-Händler-Zonen sowie in der Handelszone strikt untersagt. Dieses Verbot gilt ausdrücklich auch für die unmittelbare Umgebung dieser Bereiche. Das absichtliche Bauen neben, außerhalb oder angrenzend an diese Zonen, um die Regeln zu umgehen, ist nicht erlaubt. Gleiches gilt für das Bauen oder Flaggen-Setzen in der Nähe genehmigter Player Outposts.</p>
+</div>
+<div class="card">
+<h2>§3 Player Outpost (Orange Zone)</h2>
+<p>Im genehmigten Player Outpost dürfen ausschließlich die Camp-Leitung sowie deren offiziell registrierte Mitglieder bauen. Der Bau ist nur innerhalb des festgelegten Outpost-Bereichs erlaubt und muss dem Konzept des Außenpostens dienen. Eigenmächtige Erweiterungen oder private Strukturen sind nicht gestattet. Flaggen innerhalb eines genehmigten Außenpostens dürfen nur in dem Umfang gesetzt werden, wie es notwendig ist, um den Außenposten funktionsfähig zu machen. Übermäßiges Setzen von Flaggen zur Gebietsausweitung oder zur Schaffung inoffizieller Safezones ist untersagt.</p>
+</div>
+<div class="card">
+<h2>§4 Handelszone (Blaue Zone)</h2>
+<p>In der Handelszone darf jedes offiziell angemeldete Gewerbe genau eine Flagge setzen. Diese Flagge dient ausschließlich der Markierung des eigenen Handelsbereichs. Zusätzliche Flaggen, Gebietserweiterungen oder missbräuchliche Nutzung sind nicht erlaubt. Verstöße gegen diese Regelung werden konsequent von der Serverleitung sanktioniert.</p>
+</div>
+<div class="card">
+<h2>§5 Zonen-Regelung auf der Map</h2>
+<p>Pro Camp sind maximal 20 Mitglieder erlaubt. Eine Überschreitung der 20 Mitglieder ist nicht gestattet. Bitte haltet euch an diese Vorgabe, um Fairness und Service Balance zu gewährleisten. Zu den Mitgliedern zählen auch Campleiter und bis zu zwei Stellvertreter.</p>
+</div>
+<div class="card">
+<h2>§6 Zonen-Regelung auf der Map</h2>
+</div>
+<div class="card">
+<h2>§6.1 Blaue Zone – Händler Zone</h2>
+<p>In der Blauen Zone dürfen nur offizielle Händler bauen.</p>
+<p>Spieler dürfen diese Zone zum Einkaufen, Verkaufen und Handeln betreten.</p>
+<p>Eigene Basen oder Strukturen (z.B. Mauern, Kisten, Fallen, Shelter) von normalen Spielern sind in der Blauen Zone verboten.</p>
+<p>Griefing, Blockieren von Händlern oder Camper-Verhalten ist in der Blauen Zone streng untersagt.</p>
+</div>
+<div class="card">
+<h2>§6.2 Grüne Zone – Außenposten</h2>
+<p>Die grünen Zonen entsprechen den Außenposten im Spiel.</p>
+<p>Hier gelten die gleichen Regeln, wie sie bereits oben im Regelwerk für Außenposten festgelegt sind.</p>
+</div>
+<div class="card">
+<h2>§6.3 Orange Zone – Player Outpost</h2>
+<p>Die Orange Zone markiert einen Player Outpost, der von Spielern selbst errichtet und betrieben wird. Dieser Außenposten ist kein vorgefertigter Safeplace, sondern ein durch Spieler Arbeit entstandener Ort, der Organisation, Zusammenhalt und aktives Rollenspiel widerspiegelt.</p>
+<p>Der Player Outpost dient als Treffpunkt, Versorgungs- und Interaktionsort für Überlebende. Schutz entsteht hier nicht durch Mechaniken, sondern durch Präsenz, Absprachen und RP der Spieler, die diesen Ort nutzen und verteidigen.</p>
+<p>Der Outpost existiert nur so lange, wie er aktiv bespielt, gepflegt und verteidigt wird. Vernachlässigung, fehlende Präsenz oder Konflikte können dazu führen, dass der Ort an Bedeutung verliert oder vollständig zusammenbricht.</p>
+<p>Der Player Outpost ist ein dynamischer Teil der Welt. Er kann wachsen, sich verändern oder verschwinden – abhängig von den Entscheidungen der Spieler. Es ist kein sicherer Ort per Regel, sondern ein Ergebnis von Zusammenarbeit, Risiko und Konsequenzen.</p>
+</div>
+<div class="card">
+<h2>§7 Schuss-Call & Waffengebrauch</h2>
+<p>Spieler dürfen andere Spieler beschießen, jedoch nur mit klarem RP-Hintergrund. Es ist verboten, jemanden grundlos oder aus Langeweile anzugreifen. Gewalt muss immer situationsbedingt, nachvollziehbar und RP-logisch sein.</p>
+<p>Ein Schuss-Call gilt ab dem Moment, in dem eine Waffe sichtbar auf einen Spieler gerichtet wird. Ab diesem Zeitpunkt befindet sich die Situation in einer akuten Bedrohungslage.</p>
+<p>Das eigene Leben hat im Roleplay höchste Priorität. Befehle der anderen Partei sind zu befolgen, um das eigene Überleben zu sichern. Unnötiger Widerstand, Heladenverhalten oder sinnlose Eskalation sind nicht erlaubt.</p>
+<p>Betritt eine fremde Person einen Spieler-Außenposten ohne Einladung oder ohne ausdrückliche Erlaubnis eines berechtigten Mitglieds, gilt dies als RP-relevanter Regelverstoß. Eskaliert die Situation im RP, etwa durch Provokation, Bedrohung oder Ignorieren von Aufforderungen, ist der Einsatz von Schusswaffen innerhalb des RP-Rahmens zulässig.</p>
+<p>Sofortiges Schießen ohne vorherige Eskalation ist ausschließlich bei unmittelbarer Lebensgefahr erlaubt. Jeder Verstoß gegen diese Regeln gilt als Fail-RP und wird entsprechend geahndet.</p>
+</div>
+<div class="card">
+<h2>§8 Medics und medizinisches RP</h2>
+<p>Medics sind keine „Wiederbelebungsmaschinen“, sondern ein integraler Bestandteil des Hardcore-RPs. Spieler sollen die Dringlichkeit, Verantwortung und Spannung medizinischer Situationen spüren.</p>
+</div>
+<div class="card">
+<h2>§8.1 Allgemeines</h2>
+<p>Medics handeln ausschließlich RP-basiert. Jede medizinische Behandlung muss ausgespielt, logisch begründet und zeitlich nachvollziehbar sein. Verletzungen verlieren nicht durch Rollen, Fähigkeiten oder Menüs ihre Bedeutung – es gibt kein Instant-Healing.</p>
+<p>Medizinische Hilfe erfordert Planung, Zeit, Ressourcen und gegebenenfalls spezielle Items. Ein Medic kann nicht einfach „alles heilen“, sondern muss die Verletzungen realistisch behandeln, wobei Komplikationen, Blutverlust, Schockzustände oder Infektionen berücksichtigt werden müssen.</p>
+</div>
+<div class="card">
+<h2>§8.2 Richtlinien für Medics</h2>
+<p>Jede Behandlung muss RP-logisch erklärt werden.</p>
+<p>Zeitfaktor ist entscheidend: Ein schwer verletzter Spieler kann nicht innerhalb von Sekunden wieder kampfbereit sein.</p>
+<p>Ressourcenabhängigkeit: Heilmittel, Verbände, Medikamente oder Geräte müssen vorhanden und eingesetzt werden.</p>
+<p>Konsequenzen bleiben bestehen: Wer zu spät behandelt wird oder falsche Entscheidungen trifft, trägt die Folgen.</p>
+<p>Koordination unter Medics ist empfohlen, um komplexe Verletzungen realistisch darzustellen.</p>
+<p>Leichte Verletzungen müssen von den Spielern zunächst selbstständig zu Hause behandelt werden; auch diese heilen nicht automatisch.</p>
+<p>Phönix-Spritzen dürfen von Medics nicht benutzt werden, auch wenn sie gefunden werden.</p>
+<p>“Bewusstlose Spieler dürfen nicht mit Phönix-Spritzen wiederbelebt werden.”</p>
+</div>
+<div class="card">
+<h2>§9 Dispatch & Kommunikation</h2>
+<p>Dispatch dient ausschließlich RP-Notrufen, Koordination und RP-relevanter Kommunikation. OOC-Gespräche, Meta-Informationen oder Anweisungen außerhalb des Rollenspiels sind strikt verboten.</p>
+<p>Bewusstlose Spieler dürfen den Dispatch nicht benutzen.</p>
+<p>Dispatch muss genutzt werden, wenn medizinische, logistische oder sicherheitsrelevante RP-Situationen entstehen. Missbrauch, unnötige Notrufe oder Spam werden geahndet.</p>
+</div>
+<div class="card">
+<h2>§10 RP-Konsistenz & Spielverhalten</h2>
+<p>Alle Handlungen müssen jederzeit RP-logisch und nachvollziehbar sein.</p>
+<p>Powergaming und Metagaming sind strikt verboten.</p>
+<p>Jede Entscheidung muss zur Welt, zur Situation und zum Charakter passen.</p>
+<p>Geschichten entstehen durch Begegnungen, nicht durch Abkapselung.</p>
+</div>
+<div class="card">
+<h2>§11 Fahrzeuge Regelwerk</h2>
+<p>Fahrzeuge müssen realistisch genutzt werden. Missbrauch, Regelverstöße oder Ausnutzung führen zum Verlust des Fahrzeugs und weiteren Konsequenzen. Spieler sind selbst dafür verantwortlich, relevante Fahrzeugdaten (Fahrzeug-ID) zu dokumentieren.</p>
+</div>
+<div class="card">
+<h2>§11.1 Regeln zur Fahrzeuganzahl und Lagerung</h2>
+<p>In jedem Fahrzeug sind maximal 2 Kisten erlaubt. Mehr als 2 Kisten führen zu Strafen.</p>
+<p>Einzelspieler dürfen besitzen:</p>
+<p>1 fahrzeug aller art (auẞer Traktor)</p>
+<p>1 Motorrad (RIS zählt zu Motorrad)</p>
+<p>1 Traktor</p>
+<p>Teams/Camps dürfen besitzen:</p>
+<p>Pro Mitglied: 1 Auto und 1 Motorrad (RIS zählt zu Motorrad)</p>
+<p>Als Team insgesamt: 2 Traktor, 4 Boote, 2 Flugzeuge</p>
+</div>
+<div class="card">
+<h2>§11.2 RP & Verantwortung</h2>
+<p>Fahrzeuge müssen im RP verwendet werden – das bedeutet, sie sollten realistisch genutzt werden (z.B. Transport von Ressourcen oder Charakteren).</p>
+<p>Spieler sind dafür verantwortlich, die Fahrzeug-ID eigenständig zu dokumentieren, um im Falle von Rückerstattungen oder Supportanfragen einen Nachweis vorlegen zu können.</p>
+</div>
+<div class="card">
+<h2>§12.1 Händler & Handel</h2>
+<p>Alle Ingame-Händler auf der Map sind aktiv und verfügbar, damit Spieler jederzeit Waren kaufen oder verkaufen können. Diese Händler dienen als zentrale Anlaufstellen für den Handel im Spiel und stellen sicher, dass wichtige Items jederzeit zugänglich sind.</p>
+</div>
+<div class="card">
+<h2>§12.2 Regeln zur Händler-Aktivierung und -Deaktivierung</h2>
+<p>Händler bleiben aktiv, solange die Anzahl der aktiven Gewerbe unterhalb des festgelegten Limits liegt.</p>
+<p>Sobald die maximale Anzahl an Gewerben erreicht wird, werden die Händler automatisch deaktiviert, bis sich die Situation ändert. Dadurch wird sichergestellt, dass das System nicht überlastet wird und das Gameplay ausgewogen bleibt.</p>
+<p>Die Aktivierung und Deaktivierung der Händler erfolgt dynamisch und passt sich immer der aktuellen Spieler- und Gewerbe Situation an.</p>
+</div>
+<div class="card">
+<h2>§13 Gewerbe-Status im Discord</h2>
+<p>Regeln zur Händler-Aktivierung und -Deaktivierung:</p>
+<p>Im Discord wird ein offizieller Gewerbe-Status eingeführt, der für alle Spieler sichtbar macht, wie viele Gewerbe aktiv sind und wann Händler genutzt werden können.</p>
+<p>Dort wird auch klar ersichtlich, ab wann Händler deaktiviert werden, sodass Spieler ihre Planungen entsprechend anpassen können.</p>
+<p>Dieses System stellt sicher, dass Ingame-Händler fair, dynamisch und nachvollziehbar verfügbar sind, und dass die Welt kontrolliert auf die Spieleraktivität reagiert, ohne dass Spieler unnötig benachteiligt werden.</p>
+</div>
+<div class="card">
+<h2>§14 Streamer-Regelung</h2>
+<p>Streaming auf NOT ALONE RP ist grundsätzlich erlaubt, sowohl mit als auch ohne Streamer-Lizenz. Wer möchte, kann bei uns auf der Homepage eine Streamer-Lizenz beantragen. Link zum Streamer Lizenz Fragebogen.</p>
+</div>
+<div class="card">
+<h2>§14.1 Spieler mit Lizenz erhalten folgende Vorteile</h2>
+<p>Benachrichtigungen im Discord, wenn sie live gehen</p>
+<p>Bereitstellung von offiziellen Stream-Bildern, Overlays und Assets</p>
+<p>Sichtbarkeit für die Community als offizieller NOT ALONE RP Streamer</p>
+</div>
+<div class="card">
+<h2>§14.2 Wichtige Regeln für alle Streamer</h2>
+<p>Metagaming durch Streams ist strikt verboten. Informationen aus Chats, Zuschauern oder anderen Streams dürfen unter keinen Umständen ins RP einfließen.</p>
+<p>Streamer sind selbst verantwortlich für ihren Chat. Hinweise, Warnungen oder Tipps aus dem Chat müssen ignoriert werden. Verstöße werden wie normales Metagaming behandelt.</p>
+<p>RP-Integrität muss jederzeit gewahrt bleiben. Streamer dürfen das RP anderer Spieler nicht stören oder beeinflussen.</p>
+<p>Werbung für Streams außerhalb der offiziellen Kanäle ist nur nach Absprache erlaubt.</p>
+<p>Streamer müssen sich an alle Serverregeln und RP-Regeln halten – die Streamer-Lizenz entbindet nicht von der Verantwortung.</p>
+<p>Dieses System ermöglicht es Spielern, öffentlich zu streamen und ihre Inhalte zu teilen, ohne das RP zu gefährden, und sorgt gleichzeitig dafür, dass die Community informiert und eingebunden bleibt.</p>
+</div>
+<div class="card">
+<h2>§15 Support-Regelwerk</h2>
+<p>Support wird ausschließlich über die dafür vorgesehenen Kanäle bearbeitet. Private Nachrichten an Support-Mitglieder oder die Serverleitung sind strikt verboten. Anfragen, die außerhalb der offiziellen Kanäle gestellt werden, können nicht bearbeitet werden.</p>
+<p>Jede Support-Anfrage muss eindeutige Beweise enthalten, z. B. Screenshots oder Videos. Ohne diese Beweise erfolgt kein Support.</p>
+<p>Support dient der Klärung von Bugs, Glitches oder technischen Problemen. Er ersetzt keinesfalls RP-Konsequenzen. Die Hardcore-Prinzipien bleiben bestehen, es sei denn, es handelt sich um eindeutig belegte Fehler im Spiel.</p>
+<p>Entscheidungen des Support-Teams sind endgültig und müssen akzeptiert werden. Spieler sollten klar, respektvoll und sachlich kommunizieren. Missbrauch der Support-Kanäle, Spam oder unhöfliches Verhalten kann zu Strafen führen.</p>
+<p>Dieses System stellt sicher, dass Support effizient, transparent und fair abläuft, während gleichzeitig die RP-Integrität und Hardcore-Prinzipien gewahrt bleiben.</p>
+<p>Schlusswort</p>
+<p>NOT ALONE RP ist eine Welt, in der niemand alleine überlebt. Entscheidungen haben Gewicht, RP hat Konsequenzen und jede Begegnung formt deine Geschichte. Wer diesen Server betritt, akzeptiert Hardcore-Survival, echtes Roleplay und Verantwortung für seinen Charakter.</p>
+<p>Lies die Regeln, respektiere die Community und gestalte das RP aktiv mit. Willkommen in NOT ALONE RP – deine Geschichte beginnt jetzt.</p>
+</div>
+    </div>
+
+    <div class="card highlight">
+        <p style="text-align:center; font-size:22px; color:#ff2a2a; font-weight:bold; margin:0;">
+            Willkommen bei Not Alone RP
+            <br>
+            <span style="font-size:16px; color:white; font-weight:600;">
+                Du bist nicht allein.
+            </span>
+        </p>
+    </div>
+
+    <footer>
+        Mit Betreten des Servers akzeptierst du automatisch dieses Regelwerk. Änderungen vorbehalten.
+    </footer>
 </div>
 </body>
 </html>
